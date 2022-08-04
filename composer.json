@@ -1,0 +1,56 @@
+{
+    "name": "martin1982/oauth2-soundcloud",
+    "type": "library",
+    "description": "SoundCloud Oauth 2.0 Client Provider for The PHP League OAuth2-Client",
+    "keywords": [
+        "soundcloud",
+        "oauth",
+        "oauth2",
+        "client",
+        "authorization",
+        "authentication"
+    ],
+    "homepage": "https://github.com/Martin1982/oauth2-soundcloud",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin de Keijzer",
+            "homepage": "https://martindekeijzer.nl",
+            "email": "martin.dekeijzer@gmail.com",
+            "role": "Author"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "league/oauth2-client": "^2.3"
+    },
+    "require-dev": {
+        "ext-json": "*",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "jakub-onderka/php-console-highlighter": "^0.4.0",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "phpmd/phpmd": "^2.10",
+        "phpstan/phpstan": "^0.12.87",
+        "phpunit/phpunit": "^8.0",
+        "squizlabs/php_codesniffer": "^3.5",
+        "symfony/var-dumper": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Martin1982\\OAuth2\\Client\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Martin1982\\OAuth2\\Client\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "csfix": "php-cs-fixer fix --diff --verbose --config=.php_cs"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
