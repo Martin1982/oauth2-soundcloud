@@ -46,8 +46,6 @@ class SoundCloud extends AbstractProvider
      * Returns authorization headers for the 'bearer' grant.
      *
      * @param AccessTokenInterface|string|null $token Either a string or an access token instance
-     *
-     * @return array
      */
     protected function getAuthorizationHeaders($token = null): array
     {
