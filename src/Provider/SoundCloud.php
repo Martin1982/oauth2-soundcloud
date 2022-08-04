@@ -7,14 +7,12 @@ namespace Martin1982\OAuth2\Client\Provider;
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 use League\OAuth2\Client\Token\AccessToken;
-use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
+use League\OAuth2\Client\Token\AccessTokenInterface;
 use Martin1982\OAuth2\Client\Provider\Exception\SoundCloudIdentityProviderException;
 use Psr\Http\Message\ResponseInterface;
 
 class SoundCloud extends AbstractProvider
 {
-    use BearerAuthorizationTrait;
-
     public const ACCESS_TOKEN_RESOURCE_OWNER_ID = 'id';
 
     public const BASE_SOUNDCLOUD_URL = 'https://api.soundcloud.com/';
@@ -42,6 +40,18 @@ class SoundCloud extends AbstractProvider
     public function getResourceOwnerDetailsUrl(AccessToken $token): string
     {
         return 'https://api.soundcloud.com/me';
+    }
+
+    /**
+     * Returns authorization headers for the 'bearer' grant.
+     *
+     * @param AccessTokenInterface|string|null $token Either a string or an access token instance
+     *
+     * @return array
+     */
+    protected function getAuthorizationHeaders($token = null): array
+    {
+        return ['Authorization' => 'OAuth ' . $token];
     }
 
     /**
