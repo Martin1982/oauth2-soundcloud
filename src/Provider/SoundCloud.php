@@ -31,7 +31,7 @@ class SoundCloud extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params): string
     {
-        return self::BASE_SOUNDCLOUD_URL . '/oauth2/token';
+        return self::BASE_SOUNDCLOUD_URL . 'oauth2/token';
     }
 
     /**
