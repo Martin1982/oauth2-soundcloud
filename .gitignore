@@ -32,6 +32,9 @@ nb-configuration.xml
 build
 vendor
 
+# Composer
+./composer.lock
+
 # PHP Mess Detector
 /phpmd.xml
 
