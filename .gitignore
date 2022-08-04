@@ -33,7 +33,7 @@ build
 vendor
 
 # Composer
-./composer.lock
+composer.lock
 
 # PHP Mess Detector
 /phpmd.xml
