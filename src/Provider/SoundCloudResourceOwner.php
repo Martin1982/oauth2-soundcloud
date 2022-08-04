@@ -8,25 +8,11 @@ use League\OAuth2\Client\Provider\ResourceOwnerInterface;
 
 class SoundCloudResourceOwner implements ResourceOwnerInterface
 {
-    protected $data = [];
+    protected array $data = [];
 
     public function __construct(array $response)
     {
         $this->data = $response;
-    }
-
-    public function getBirthday(): ?\DateTimeInterface
-    {
-        if (null === $this->data['birthday'] || '0000-00-00' === $this->data['birthday']) {
-            return null;
-        }
-
-        $date = \DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $this->data['birthday'] . '00:00:00');
-        if (false === $date) {
-            return null;
-        }
-
-        return $date;
     }
 
     public function getCountry(): ?string
@@ -34,33 +20,9 @@ class SoundCloudResourceOwner implements ResourceOwnerInterface
         return $this->data['country'] ?? null;
     }
 
-    public function getEmail(): ?string
-    {
-        return $this->data['email'] ?? null;
-    }
-
-    public function getExplicitContentLevel(): ?string
-    {
-        return $this->data['explicit_content_level'] ?? null;
-    }
-
-    public function getExplicitContentLevelsAvailable(): array
-    {
-        return $this->data['explicit_content_levels_available'] ?? [];
-    }
-
     public function getFirstname(): ?string
     {
-        return $this->data['firstname'] ?? null;
-    }
-
-    public function getGender(): ?string
-    {
-        if (!\in_array($this->data['gender'], ['F', 'M'], true)) {
-            return null;
-        }
-
-        return $this->data['gender'];
+        return $this->data['first_name'] ?? null;
     }
 
     public function getId(): string
@@ -68,78 +30,34 @@ class SoundCloudResourceOwner implements ResourceOwnerInterface
         return (string) $this->data['id'];
     }
 
-    public function getInscriptionDate(): ?\DateTimeInterface
+    public function getLocale(): string
     {
-        if (null === $this->data['inscription_date']) {
-            return null;
-        }
-
-        $date = \DateTimeImmutable::createFromFormat('Y-m-d H:i:s', $this->data['inscription_date'] . '00:00:00');
-        if (false === $date) {
-            return null;
-        }
-
-        return $date;
-    }
-
-    public function isKid(): bool
-    {
-        return $this->data['is_kid'];
-    }
-
-    public function getLang(): string
-    {
-        return $this->data['lang'];
+        return $this->data['locale'];
     }
 
     public function getLastname(): ?string
     {
-        return $this->data['lastname'] ?? null;
+        return $this->data['last_name'] ?? null;
     }
 
-    public function getLink(): ?string
+    public function getUri(): ?string
     {
-        return $this->data['link'] ?? null;
+        return $this->data['uri'] ?? null;
     }
 
-    public function getName(): ?string
+    public function getFullName(): ?string
     {
-        return $this->data['name'] ?? null;
+        return $this->data['full_name'] ?? null;
     }
 
-    public function getPicture(): ?string
+    public function getAvatarUrl(): ?string
     {
-        return $this->data['picture'] ?? null;
+        return $this->data['avatar_url'] ?? null;
     }
 
-    public function getPictureSmall(): ?string
+    public function getOnline(): int
     {
-        return $this->data['picture_small'] ?? null;
-    }
-
-    public function getPictureMedium(): ?string
-    {
-        return $this->data['picture_medium'] ?? null;
-    }
-
-    public function getPictureBig(): ?string
-    {
-        return $this->data['picture_big'] ?? null;
-    }
-
-    public function getPictureXl(): ?string
-    {
-        return $this->data['picture_xl'] ?? null;
-    }
-
-    public function getStatus(): int
-    {
-        return $this->data['status'];
-    }
-
-    public function getTracklist(): string
-    {
-        return $this->data['tracklist'];
+        return $this->data['online'];
     }
 
     /**
