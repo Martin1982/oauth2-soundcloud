@@ -1,0 +1,48 @@
+{
+  "avatar_url": "https://image.img/avatar.png",
+  "city": "string",
+  "country": "NL",
+  "created_at": "string",
+  "description": "string",
+  "discogs_name": "string",
+  "first_name": "john",
+  "followers_count": 0,
+  "followings_count": 0,
+  "full_name": "john doe",
+  "id": 0,
+  "kind": "string",
+  "last_modified": "string",
+  "last_name": "doe",
+  "likes_count": 0,
+  "locale": "BE_nl",
+  "online": true,
+  "permalink": "string",
+  "permalink_url": "string",
+  "plan": "string",
+  "playlist_count": 0,
+  "primary_email_confirmed": true,
+  "private_playlists_count": 0,
+  "private_tracks_count": 0,
+  "public_favorites_count": 0,
+  "quota": {
+    "unlimited_upload_quota": true,
+    "upload_seconds_used": 0,
+    "upload_seconds_left": "Unknown Type: integer,"
+  },
+  "reposts_count": 0,
+  "subscriptions": [
+    {
+      "product": {
+        "id": "string",
+        "name": "string"
+      },
+      "recurring": true
+    }
+  ],
+  "track_count": 0,
+  "upload_seconds_left": "Unknown Type: integer,",
+  "uri": "https://some.uri",
+  "username": "string",
+  "website": "string",
+  "website_title": "string"
+}

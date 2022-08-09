@@ -55,7 +55,7 @@ class SoundCloudResourceOwner implements ResourceOwnerInterface
         return $this->data['avatar_url'] ?? null;
     }
 
-    public function getOnline(): int
+    public function getOnline(): bool
     {
         return $this->data['online'];
     }
