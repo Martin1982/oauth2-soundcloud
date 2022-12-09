@@ -13,7 +13,7 @@ use Martin1982\OAuth2\Client\Provider\Exception\SoundCloudIdentityProviderExcept
 use Martin1982\OAuth2\Client\Provider\SoundCloud;
 use Martin1982\OAuth2\Client\Provider\SoundCloudResourceOwner;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Client\ClientInterface;
+use GuzzleHttp\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class FooSoundCloudProvider extends SoundCloud
@@ -28,6 +28,7 @@ class FooSoundCloudProvider extends SoundCloud
  * Class SoundCloudTest.
  *
  * @internal
+ *
  * @coversNothing
  */
 class SoundCloudTest extends TestCase
@@ -95,7 +96,7 @@ class SoundCloudTest extends TestCase
         $response->method('getHeader')->willReturn(['content-type' => 'json']);
         $response->method('getStatusCode')->willReturn(200);
 
-        $client = $this->createMock(ClientInterface::class);
+        $client = $this->createMock(HttpClientInterface::class);
         $client->method('send')->willReturn($response);
 
         $this->provider->setHttpClient($client);
@@ -162,8 +163,6 @@ class SoundCloudTest extends TestCase
     }
 
     /**
-     * @param $name
-     *
      * @return mixed|null
      */
     protected function callMethod($name, array $args = [])

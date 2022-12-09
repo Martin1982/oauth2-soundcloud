@@ -15,6 +15,7 @@ use PHPUnit\Framework\TestCase;
  * Class SoundCloudResourceOwnerTest.
  *
  * @internal
+ *
  * @coversNothing
  */
 class SoundCloudResourceOwnerTest extends TestCase
