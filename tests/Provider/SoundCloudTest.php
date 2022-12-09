@@ -8,12 +8,12 @@ declare(strict_types=1);
 
 namespace Martin1982\OAuth2\Client\Test\Provider;
 
+use GuzzleHttp\ClientInterface as HttpClientInterface;
 use League\OAuth2\Client\Token\AccessToken;
 use Martin1982\OAuth2\Client\Provider\Exception\SoundCloudIdentityProviderException;
 use Martin1982\OAuth2\Client\Provider\SoundCloud;
 use Martin1982\OAuth2\Client\Provider\SoundCloudResourceOwner;
 use PHPUnit\Framework\TestCase;
-use GuzzleHttp\ClientInterface as HttpClientInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class FooSoundCloudProvider extends SoundCloud
@@ -163,6 +163,8 @@ class SoundCloudTest extends TestCase
     }
 
     /**
+     * @param mixed $name
+     *
      * @return mixed|null
      */
     protected function callMethod($name, array $args = [])
